@@ -78,7 +78,7 @@ public class ModuleJScripting extends ServerEventHandler implements ScriptHandle
     @Preconditions
     public boolean canLoad()
     {
-        System.setProperty("nashorn.args", "-strict --no-java --no-syntax-extensions");
+        System.setProperty("nashorn.args", "-strict -scripting");
         ScriptEngine engine = SEM.getEngineByName("JavaScript");
         isNashorn = engine.getFactory().getEngineName().toLowerCase().contains("nashorn");
         isRhino = engine.getFactory().getEngineName().toLowerCase().contains("rhino");
